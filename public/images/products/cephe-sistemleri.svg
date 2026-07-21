@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" role="img" aria-labelledby="title desc">
+  <title id="title">Cephe Sistemleri</title>
+  <desc id="desc">Aluminium curtain wall facade system product visual.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#020617"/>
+      <stop offset=".5" stop-color="#1e40af"/>
+      <stop offset="1" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e0f2fe"/>
+      <stop offset=".48" stop-color="#7dd3fc"/>
+      <stop offset="1" stop-color="#1e3a8a"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="675" fill="url(#bg)"/>
+  <path d="M95 570L255 120h390l160 450z" fill="#ffffff" opacity=".14"/>
+  <g transform="translate(230 95)">
+    <path d="M45 0h350l60 450H-15z" fill="#e2e8f0" opacity=".9"/>
+    <path d="M70 35h300l42 380H28z" fill="#0f172a" opacity=".38"/>
+    <g fill="url(#glass)">
+      <path d="M90 60h105v95H78z"/>
+      <path d="M218 60h105v95H210z"/>
+      <path d="M345 60h42l10 95h-60z"/>
+      <path d="M72 180h125v95H58z"/>
+      <path d="M212 180h125v95H204z"/>
+      <path d="M352 180h58l10 95h-76z"/>
+      <path d="M54 300h145v95H38z"/>
+      <path d="M206 300h145v95H198z"/>
+      <path d="M358 300h74l10 95h-92z"/>
+    </g>
+    <path d="M205 35l-14 380M332 35l28 380M54 165h350M38 285h382" stroke="#f8fafc" stroke-width="14" opacity=".75"/>
+  </g>
+  <text x="450" y="600" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="800" text-anchor="middle">CEPHE SISTEMLERI</text>
+</svg>

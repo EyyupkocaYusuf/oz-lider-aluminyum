@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" role="img" aria-labelledby="title desc">
+  <title id="title">Uretim Tesisi</title>
+  <desc id="desc">Modern aluminium production facility visual.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#020617"/>
+      <stop offset=".55" stop-color="#1e3a8a"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset=".45" stop-color="#94a3b8"/>
+      <stop offset="1" stop-color="#475569"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="675" fill="url(#bg)"/>
+  <circle cx="735" cy="120" r="175" fill="#7dd3fc" opacity=".18"/>
+  <path d="M95 510h710v75H95z" fill="#0f172a" opacity=".45"/>
+  <path d="M135 255h220l85-85 85 85h240v255H135z" fill="#e2e8f0" opacity=".92"/>
+  <path d="M185 305h115v150H185zM360 305h115v150H360zM535 305h115v150H535z" fill="#bfdbfe"/>
+  <path d="M160 255h605" stroke="#0f172a" stroke-width="18" opacity=".35"/>
+  <path d="M240 535h420" stroke="url(#metal)" stroke-width="24" stroke-linecap="round"/>
+  <path d="M210 215h95v40h-95zM610 215h95v40h-95z" fill="#38bdf8" opacity=".7"/>
+  <text x="450" y="620" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="800" text-anchor="middle">URETIM TESISI</text>
+</svg>

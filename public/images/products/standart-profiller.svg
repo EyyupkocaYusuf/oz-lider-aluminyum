@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" role="img" aria-labelledby="title desc">
+  <title id="title">Standart Profiller</title>
+  <desc id="desc">Stacked aluminium profile product visual.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset=".62" stop-color="#334155"/>
+      <stop offset="1" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset=".35" stop-color="#cbd5e1"/>
+      <stop offset=".7" stop-color="#64748b"/>
+      <stop offset="1" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="675" fill="url(#bg)"/>
+  <path d="M0 550c130-65 245-78 390-35 155 46 290 29 510-78v238H0z" fill="#38bdf8" opacity=".18"/>
+  <g transform="translate(165 130)">
+    <rect x="0" y="70" width="520" height="56" rx="16" fill="url(#metal)"/>
+    <rect x="70" y="145" width="520" height="56" rx="16" fill="url(#metal)"/>
+    <rect x="25" y="220" width="520" height="56" rx="16" fill="url(#metal)"/>
+    <rect x="95" y="295" width="520" height="56" rx="16" fill="url(#metal)"/>
+    <circle cx="55" cy="98" r="17" fill="#0f172a" opacity=".45"/>
+    <circle cx="125" cy="173" r="17" fill="#0f172a" opacity=".45"/>
+    <circle cx="80" cy="248" r="17" fill="#0f172a" opacity=".45"/>
+    <circle cx="150" cy="323" r="17" fill="#0f172a" opacity=".45"/>
+  </g>
+  <rect x="154" y="505" width="592" height="24" rx="12" fill="#e2e8f0" opacity=".75"/>
+  <text x="450" y="600" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="800" text-anchor="middle">STANDART PROFILLER</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" role="img" aria-labelledby="title desc">
+  <title id="title">Kalite Kontrol</title>
+  <desc id="desc">Quality control process visual.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#082f49"/>
+      <stop offset=".56" stop-color="#1e40af"/>
+      <stop offset="1" stop-color="#67e8f9"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#cbd5e1"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="675" fill="url(#bg)"/>
+  <circle cx="165" cy="120" r="130" fill="#bae6fd" opacity=".16"/>
+  <rect x="165" y="105" width="570" height="390" rx="34" fill="#ffffff" opacity=".18"/>
+  <rect x="220" y="150" width="340" height="300" rx="28" fill="url(#panel)"/>
+  <path d="M285 250h205M285 315h155M285 380h190" stroke="#334155" stroke-width="18" stroke-linecap="round" opacity=".45"/>
+  <circle cx="620" cy="300" r="92" fill="#0f172a" opacity=".65"/>
+  <path d="m580 300 30 30 65-76" fill="none" stroke="#38bdf8" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M515 470h230" stroke="#e2e8f0" stroke-width="22" stroke-linecap="round" opacity=".8"/>
+  <text x="450" y="610" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="800" text-anchor="middle">KALITE KONTROL</text>
+</svg>

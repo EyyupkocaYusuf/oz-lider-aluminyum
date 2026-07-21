@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" role="img" aria-labelledby="title desc">
+  <title id="title">Profil Sistemleri</title>
+  <desc id="desc">Aluminium profile systems visual.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset=".58" stop-color="#334155"/>
+      <stop offset="1" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset=".35" stop-color="#cbd5e1"/>
+      <stop offset=".75" stop-color="#64748b"/>
+      <stop offset="1" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="675" fill="url(#bg)"/>
+  <path d="M0 540c150-70 280-85 430-38 170 53 310 28 470-62v235H0z" fill="#38bdf8" opacity=".16"/>
+  <g transform="translate(145 145)">
+    <rect x="0" y="40" width="560" height="60" rx="18" fill="url(#metal)"/>
+    <rect x="70" y="132" width="560" height="60" rx="18" fill="url(#metal)"/>
+    <rect x="25" y="224" width="560" height="60" rx="18" fill="url(#metal)"/>
+    <rect x="95" y="316" width="560" height="60" rx="18" fill="url(#metal)"/>
+    <circle cx="58" cy="70" r="17" fill="#0f172a" opacity=".45"/>
+    <circle cx="128" cy="162" r="17" fill="#0f172a" opacity=".45"/>
+    <circle cx="83" cy="254" r="17" fill="#0f172a" opacity=".45"/>
+    <circle cx="153" cy="346" r="17" fill="#0f172a" opacity=".45"/>
+  </g>
+  <text x="450" y="610" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="800" text-anchor="middle">PROFIL SISTEMLERI</text>
+</svg>
