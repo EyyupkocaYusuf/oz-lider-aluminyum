@@ -97,61 +97,6 @@ document.querySelectorAll('[data-image-upload]').forEach((zone) => {
     });
 });
 
-document.querySelectorAll('[data-pdf-upload]').forEach((zone) => {
-    const input = zone.querySelector('input[type="file"]');
-    const preview = zone.querySelector('[data-pdf-preview]');
-
-    if (!input || !preview) {
-        return;
-    }
-
-    const renderPreview = (file) => {
-        if (!file || file.type !== 'application/pdf') {
-            return;
-        }
-
-        preview.innerHTML = `
-            <span class="admin-upload-zone__icon">
-                <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M6 4h9l3 3v13H6V4Zm9 0v3h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                </svg>
-            </span>
-            <p class="admin-upload-zone__label">PDF seçildi</p>
-            <p class="admin-upload-zone__sub" data-pdf-filename>${file.name}</p>
-            <p class="admin-upload-zone__sub">Yeni dosya seçmek için tıklayın veya sürükleyin</p>
-        `;
-    };
-
-    input.addEventListener('change', () => {
-        renderPreview(input.files?.[0]);
-    });
-
-    zone.addEventListener('dragover', (event) => {
-        event.preventDefault();
-        zone.classList.add('is-dragover');
-    });
-
-    zone.addEventListener('dragleave', () => {
-        zone.classList.remove('is-dragover');
-    });
-
-    zone.addEventListener('drop', (event) => {
-        event.preventDefault();
-        zone.classList.remove('is-dragover');
-
-        const file = event.dataTransfer?.files?.[0];
-
-        if (!file) {
-            return;
-        }
-
-        const dataTransfer = new DataTransfer();
-        dataTransfer.items.add(file);
-        input.files = dataTransfer.files;
-        renderPreview(file);
-    });
-});
-
 document.addEventListener('DOMContentLoaded', () => {
     const flash = window.__SITE_FLASH__;
     const host = document.getElementById('site-toast-host');

@@ -1,32 +1,27 @@
 <div class="admin-product-form space-y-6">
     <div class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
         <section class="admin-form-section">
-            <h3 class="admin-form-section__title">PDF Dosyası</h3>
-            <p class="admin-form-section__hint">Katalog PDF dosyasını yükleyin. Maksimum dosya boyutu: 10 MB.</p>
+            <h3 class="admin-form-section__title">Katalog Bağlantısı</h3>
+            <p class="admin-form-section__hint">Katalog dosyasının bulunduğu bağlantıyı yapıştırın. Ziyaretçiler bu adrese yönlendirilir.</p>
 
-            <div class="admin-upload-zone admin-upload-zone--pdf" data-pdf-upload>
-                <div class="admin-upload-zone__preview" data-pdf-preview>
-                    @if (!empty($catalog?->pdf_path))
-                        <span class="admin-upload-zone__icon">
-                            <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                <path d="M6 4h9l3 3v13H6V4Zm9 0v3h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                            </svg>
-                        </span>
-                        <p class="admin-upload-zone__label">Mevcut PDF yüklü</p>
-                        <p class="admin-upload-zone__sub" data-pdf-filename>{{ $catalog->title }}.pdf</p>
-                        <p class="admin-upload-zone__sub">Yeni dosya seçmek için tıklayın veya sürükleyin</p>
-                    @else
-                        <span class="admin-upload-zone__icon" data-pdf-placeholder>
-                            <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                <path d="M6 4h9l3 3v13H6V4Zm9 0v3h3M8.5 12h7M8.5 16h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                            </svg>
-                        </span>
-                        <p class="admin-upload-zone__label" data-pdf-placeholder>PDF yükleyin</p>
-                        <p class="admin-upload-zone__sub" data-pdf-placeholder>Dosyayı sürükleyin veya seçmek için tıklayın</p>
-                    @endif
-                </div>
-                <input id="pdf" name="pdf" type="file" accept="application/pdf" @if(empty($catalog)) required @endif>
+            <div class="admin-field">
+                <label for="pdf_link" class="admin-label">Bağlantı (URL)</label>
+                <input
+                    id="pdf_link"
+                    name="pdf_link"
+                    type="url"
+                    value="{{ old('pdf_link', $catalog?->pdf_link ?? '') }}"
+                    required
+                    class="admin-input"
+                    placeholder="https://ornek.com/katalog.pdf"
+                >
             </div>
+
+            @if (!empty($catalog?->pdf_link))
+                <a href="{{ $catalog->pdf_link }}" target="_blank" rel="noopener" class="admin-btn-link mt-3 inline-flex">
+                    Mevcut bağlantıyı aç →
+                </a>
+            @endif
         </section>
 
         <section class="admin-form-section">

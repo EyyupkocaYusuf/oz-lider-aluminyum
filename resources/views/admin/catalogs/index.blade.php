@@ -4,7 +4,7 @@
 @section('heading', 'Kataloglar')
 
 @section('content')
-    <x-admin.page-header title="Katalog Yönetimi" description="PDF katalog dosyalarını yükleyin ve sitede yayınlayın.">
+    <x-admin.page-header title="Katalog Yönetimi" description="Katalog bağlantılarını ekleyin ve sitede yayınlayın.">
         <x-slot:action>
             <a href="{{ route('admin.catalogs.create') }}" class="admin-btn-primary">Katalog Ekle</a>
         </x-slot:action>
@@ -16,7 +16,7 @@
                 <tr>
                     <th>Başlık</th>
                     <th>Kod</th>
-                    <th>PDF</th>
+                    <th>Bağlantı</th>
                     <th>İşlemler</th>
                 </tr>
             </thead>
@@ -27,7 +27,7 @@
                         <td>{{ $catalog->code }}</td>
                         <td>
                             @if ($catalog->hasPdf())
-                                <span class="admin-badge admin-badge--success">Yüklü</span>
+                                <a href="{{ $catalog->pdf_url }}" target="_blank" rel="noopener" class="admin-btn-link">Bağlantıyı aç</a>
                             @else
                                 <span class="admin-badge admin-badge--warning">Eksik</span>
                             @endif

@@ -28,10 +28,6 @@ class CatalogController extends Controller
     {
         $validated = $this->validateCatalog($request);
 
-        if ($request->hasFile('pdf')) {
-            $validated['pdf_path'] = $request->file('pdf')->store('catalogs', 'public');
-        }
-
         Catalog::create($validated);
 
         return redirect()
@@ -48,12 +44,9 @@ class CatalogController extends Controller
     {
         $validated = $this->validateCatalog($request, $catalog);
 
-        if ($request->hasFile('pdf')) {
-            if ($catalog->pdf_path) {
-                Storage::disk('public')->delete($catalog->pdf_path);
-            }
-
-            $validated['pdf_path'] = $request->file('pdf')->store('catalogs', 'public');
+        if ($catalog->pdf_path) {
+            Storage::disk('public')->delete($catalog->pdf_path);
+            $validated['pdf_path'] = null;
         }
 
         $catalog->update($validated);
@@ -86,15 +79,16 @@ class CatalogController extends Controller
                 'max:50',
                 Rule::unique('catalogs', 'code')->ignore($catalog?->id),
             ],
-            'pdf' => [$catalog ? 'nullable' : 'required', 'file', 'mimes:pdf', 'max:10240'],
+            'pdf_link' => ['required', 'url', 'max:2048'],
+        ], [
+            'pdf_link.required' => 'Katalog bağlantısı zorunludur.',
+            'pdf_link.url' => 'Geçerli bir bağlantı girin. Örn. https://ornek.com/katalog.pdf',
         ]);
 
         $validated['category_id'] = $catalog?->category_id;
         $validated['description'] = $catalog?->description ?? '';
         $validated['sort_order'] = $catalog?->sort_order ?? 0;
         $validated['is_active'] = $catalog?->is_active ?? true;
-
-        unset($validated['pdf']);
 
         return $validated;
     }

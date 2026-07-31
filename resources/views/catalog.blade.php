@@ -27,15 +27,15 @@
                     <h2 class="font-display mt-8 text-2xl font-bold text-[var(--color-ink)]">{{ $catalog->title }}</h2>
                     <div class="mt-auto pt-8">
                         @if ($catalog->hasPdf())
-                            <a href="{{ route('catalog.download', $catalog) }}" class="site-btn site-btn--dark w-full">
+                            <a href="{{ route('catalog.download', $catalog) }}" target="_blank" rel="noopener" class="site-btn site-btn--dark w-full">
                                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                     <path d="M12 3v11m0 0 4-4m-4 4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M5 17v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2" stroke="currentColor" stroke-linecap="round"/>
                                 </svg>
-                                PDF İndir
+                                Kataloğu Görüntüle
                             </a>
                         @else
-                            <button class="site-btn w-full cursor-not-allowed opacity-40" type="button" disabled>PDF Yakında</button>
+                            <button class="site-btn w-full cursor-not-allowed opacity-40" type="button" disabled>Katalog Yakında</button>
                         @endif
                     </div>
                 </article>

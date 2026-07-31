@@ -13,6 +13,7 @@ class Catalog extends Model
         'code',
         'description',
         'pdf_path',
+        'pdf_link',
         'sort_order',
         'is_active',
     ];
@@ -42,11 +43,15 @@ class Catalog extends Model
 
     public function hasPdf(): bool
     {
-        return ! empty($this->pdf_path);
+        return ! empty($this->pdf_link) || ! empty($this->pdf_path);
     }
 
     public function getPdfUrlAttribute(): ?string
     {
+        if ($this->pdf_link) {
+            return $this->pdf_link;
+        }
+
         if (! $this->pdf_path) {
             return null;
         }
