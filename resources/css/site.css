@@ -460,3 +460,121 @@
     background: var(--color-champagne);
 }
 
+.site-breadcrumbs {
+    font-size: 0.78rem;
+    letter-spacing: 0.01em;
+    color: var(--color-steel);
+}
+
+.site-breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.site-breadcrumbs li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.site-breadcrumbs a {
+    color: inherit;
+    transition: color 0.2s ease;
+}
+
+.site-breadcrumbs a:hover {
+    color: var(--color-champagne-light);
+}
+
+.site-breadcrumbs [aria-current='page'] {
+    font-weight: 600;
+    color: var(--color-champagne);
+}
+
+.site-faq {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.site-faq__item {
+    border-radius: 1rem;
+    border: 1px solid rgba(18, 23, 31, 0.08);
+    background: white;
+    box-shadow: 0 4px 20px rgba(10, 13, 18, 0.04);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.site-faq__item[open] {
+    border-color: rgba(201, 169, 98, 0.45);
+    box-shadow: 0 14px 34px rgba(10, 13, 18, 0.08);
+}
+
+.site-faq__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    list-style: none;
+}
+
+.site-faq__question::-webkit-details-marker {
+    display: none;
+}
+
+.site-faq__question h3 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--color-ink);
+}
+
+.site-faq__icon {
+    position: relative;
+    flex: none;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 9999px;
+    background: rgba(201, 169, 98, 0.14);
+}
+
+.site-faq__icon::before,
+.site-faq__icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: var(--color-copper);
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s ease;
+}
+
+.site-faq__icon::before {
+    height: 2px;
+    width: 0.7rem;
+}
+
+.site-faq__icon::after {
+    height: 0.7rem;
+    width: 2px;
+}
+
+.site-faq__item[open] .site-faq__icon::after {
+    opacity: 0;
+}
+
+.site-faq__answer {
+    padding: 0 1.5rem 1.4rem;
+    font-size: 0.9rem;
+    line-height: 1.85;
+    color: #64748b;
+}
+
