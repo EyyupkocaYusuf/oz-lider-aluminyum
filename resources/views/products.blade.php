@@ -23,21 +23,21 @@
         ];
     }
 
+    // Ürünlerde herkese açık fiyat yayınlanmadığı için "Product" tipi kullanılmıyor;
+    // Google bu tipte "offers" veya "review" zorunlu tutuyor ve olmayan bir fiyatı
+    // işaretlemek yapısal veri kurallarına aykırı olurdu.
     $productListSchema = [
         '@context' => 'https://schema.org',
         '@type' => 'ItemList',
         'name' => $pageHeading,
+        'numberOfItems' => $products->count(),
+        'itemListOrder' => 'https://schema.org/ItemListOrderAscending',
         'itemListElement' => $products->values()->map(fn ($product, $index) => array_filter([
             '@type' => 'ListItem',
             'position' => $index + 1,
-            'item' => array_filter([
-                '@type' => 'Product',
-                'name' => $product->title,
-                'image' => $product->image_url,
-                'category' => $product->category?->name,
-                'brand' => ['@type' => 'Brand', 'name' => config('seo.brand')],
-                'url' => route('products.index', $product->category ? ['kategori' => $product->category->slug] : []),
-            ]),
+            'name' => $product->title,
+            'image' => $product->image_url,
+            'url' => route('products.index', $product->category ? ['kategori' => $product->category->slug] : []),
         ]))->all(),
     ];
 @endphp
