@@ -28,9 +28,24 @@
                 </span>
             </a>
 
-            <nav class="hidden items-center gap-9 md:flex" aria-label="Ana menü">
+            <nav class="hidden items-center gap-8 md:flex" aria-label="Ana menü">
                 <a class="site-nav-link {{ request()->is('/') ? 'is-active' : '' }}" href="{{ url('/') }}">Ana Sayfa</a>
                 <a class="site-nav-link {{ request()->is('hakkimizda') ? 'is-active' : '' }}" href="{{ url('/hakkimizda') }}">Hakkımızda</a>
+
+                <div class="site-dropdown">
+                    <a class="site-nav-link {{ request()->routeIs('service.show') ? 'is-active' : '' }}" href="{{ route('service.show', array_key_first(config('seo-services'))) }}">
+                        Hizmetlerimiz
+                    </a>
+                    <div class="site-dropdown__panel">
+                        @foreach (config('seo-services') as $serviceSlug => $servicePage)
+                            <a
+                                class="site-dropdown__link {{ request()->is($serviceSlug) ? 'is-active' : '' }}"
+                                href="{{ route('service.show', $serviceSlug) }}"
+                            >{{ $servicePage['h1'] }}</a>
+                        @endforeach
+                    </div>
+                </div>
+
                 <a class="site-nav-link {{ request()->is('urunlerimiz') ? 'is-active' : '' }}" href="{{ url('/urunlerimiz') }}">Ürünlerimiz</a>
                 <a class="site-nav-link {{ request()->is('katalog') ? 'is-active' : '' }}" href="{{ url('/katalog') }}">Katalog</a>
                 <a class="site-btn site-btn--primary !py-2.5 !px-5" href="{{ url('/#iletisim') }}">Teklif Alın</a>
@@ -50,7 +65,7 @@
     <footer class="site-footer">
         <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
             <div class="grid gap-10 md:grid-cols-12">
-                <div class="md:col-span-5">
+                <div class="md:col-span-4">
                     <div class="flex items-center gap-3">
                         <span class="site-logo-mark !h-10 !w-10 text-xs" aria-hidden="true">ÖL</span>
                         <span class="font-display text-lg font-bold text-white">Öz Lider Alüminyum</span>
@@ -60,6 +75,14 @@
                     </p>
                 </div>
                 <div class="md:col-span-3">
+                    <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-champagne)]">Hizmetlerimiz</h2>
+                    <nav class="mt-4 flex flex-col gap-2.5 text-sm text-[var(--color-steel)]" aria-label="Hizmet sayfaları">
+                        @foreach (config('seo-services') as $serviceSlug => $servicePage)
+                            <a class="transition hover:text-[var(--color-champagne-light)]" href="{{ route('service.show', $serviceSlug) }}">{{ $servicePage['h1'] }}</a>
+                        @endforeach
+                    </nav>
+                </div>
+                <div class="md:col-span-2">
                     <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-champagne)]">Sayfalar</h2>
                     <nav class="mt-4 flex flex-col gap-2.5 text-sm text-[var(--color-steel)]" aria-label="Alt menü">
                         <a class="transition hover:text-[var(--color-champagne-light)]" href="{{ url('/') }}">Ana Sayfa</a>
@@ -69,7 +92,7 @@
                         <a class="transition hover:text-[var(--color-champagne-light)]" href="{{ url('/#iletisim') }}">İletişim</a>
                     </nav>
                 </div>
-                <div class="md:col-span-4">
+                <div class="md:col-span-3">
                     <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-champagne)]">İletişim</h2>
                     <address class="mt-4 space-y-2 text-sm not-italic text-[var(--color-steel)]">
                         <p>{{ config('seo.address.display') }}</p>

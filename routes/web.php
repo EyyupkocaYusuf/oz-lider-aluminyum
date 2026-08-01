@@ -11,6 +11,7 @@ use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ServicePageController;
 use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,11 @@ Route::get('/katalog', [CatalogController::class, 'index'])->name('catalog.index
 Route::get('/katalog/{catalog}/indir', [CatalogController::class, 'download'])->name('catalog.download');
 
 Route::get('/hakkimizda', [AboutController::class, 'index'])->name('about.index');
+
+// Hizmet iniş sayfaları (config/seo-services.php içindeki kayıtlardan üretilir).
+Route::get('/{service}', [ServicePageController::class, 'show'])
+    ->whereIn('service', array_keys(config('seo-services')))
+    ->name('service.show');
 
 Route::middleware('guest')->group(function () {
     Route::get('/admin/giris', [LoginController::class, 'create'])->name('login');

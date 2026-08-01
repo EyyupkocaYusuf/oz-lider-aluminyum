@@ -20,6 +20,15 @@ class SitemapController extends Controller
             ['loc' => route('about.index'), 'changefreq' => 'yearly', 'priority' => '0.7', 'lastmod' => null],
         ];
 
+        foreach (array_keys(config('seo-services')) as $serviceSlug) {
+            $urls[] = [
+                'loc' => route('service.show', $serviceSlug),
+                'changefreq' => 'monthly',
+                'priority' => '0.9',
+                'lastmod' => null,
+            ];
+        }
+
         foreach ($this->categories() as $category) {
             $urls[] = [
                 'loc' => route('products.index', ['kategori' => $category->slug]),

@@ -39,32 +39,7 @@
         ], $faqs),
     ];
 
-    $services = [
-        [
-            'title' => 'Alüminyum Kapı ve Pencere Sistemleri',
-            'text' => 'Konut ve iş yerleri için dayanıklı, bakım gerektirmeyen alüminyum kapı ve pencere doğramaları. Bingöl iklim koşullarına uygun conta ve aksesuar seçimiyle uzun ömürlü uygulama.',
-        ],
-        [
-            'title' => 'Giydirme Cephe Sistemleri',
-            'text' => 'Ticari binalar, plazalar ve kamu yapıları için stick ve semi-unitized giydirme cephe çözümleri. Statik hesap, su-yağmur sızdırmazlığı ve montaj süreci tek elden yürütülür.',
-        ],
-        [
-            'title' => 'Kompozit Cephe Kaplama',
-            'text' => 'A2 ve B1 sınıfı alüminyum kompozit panellerle bina dış cephe kaplama uygulamaları. Geniş renk seçeneği, hızlı montaj ve yıllara dayanan yüzey performansı.',
-        ],
-        [
-            'title' => 'Isı Yalıtımlı Alüminyum Doğrama',
-            'text' => 'Polyamid barlı profillerle üretilen ısı yalıtımlı sistemler; enerji faturasını düşürür, yoğuşmayı engeller ve iç mekân konforunu artırır.',
-        ],
-        [
-            'title' => 'Sürme ve Katlanır Sistemler',
-            'text' => 'Balkon, teras ve geniş açıklıklar için sürme, kaldır-sür ve katlanır cam sistemleri. Maksimum gün ışığı, minimum profil görünümü.',
-        ],
-        [
-            'title' => 'Alüminyum Korkuluk ve Küpeşte',
-            'text' => 'Merdiven, balkon ve teraslar için cam veya dolu panelli alüminyum korkuluk sistemleri. Paslanmaz, hafif ve güvenli çözümler.',
-        ],
-    ];
+    $services = config('seo-services');
 @endphp
 
 @push('schema')
@@ -138,11 +113,12 @@
             </div>
 
             <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                @foreach ($services as $service)
-                    <article class="site-value-card">
-                        <h3 class="site-subheading text-lg text-[var(--color-ink)]">{{ $service['title'] }}</h3>
-                        <p class="mt-3 text-sm leading-7 text-[#64748b]">{{ $service['text'] }}</p>
-                    </article>
+                @foreach ($services as $serviceSlug => $service)
+                    <a href="{{ route('service.show', $serviceSlug) }}" class="site-value-card block">
+                        <h3 class="site-subheading text-lg text-[var(--color-ink)]">{{ $service['h1'] }}</h3>
+                        <p class="mt-3 text-sm leading-7 text-[#64748b]">{{ $service['lead'] }}</p>
+                        <span class="mt-5 inline-block text-sm font-semibold text-[var(--color-copper)]">Detayları görün →</span>
+                    </a>
                 @endforeach
             </div>
         </div>
